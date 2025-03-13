@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "watch": "webpack --watch --config webpack.config.js",
-    "build": "electron-builder -mwls",
+    "build": "electron-builder -mwls"
   },
   "author": "SetScript",
   "license": "MIT",
