@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder",
-    "watch": "webpack --watch --config webpack.config.js"
+    "watch": "webpack --watch --config webpack.config.js",
+    "build": "electron-builder -mwls",
   },
-  "author": "",
+  "author": "SetScript",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -16,6 +16,7 @@
     "discord-rpc": "^4.0.1",
     "ejs": "^3.1.10",
     "electron-store": "^8.1.0",
+    "electron-updater": "^6.3.9",
     "express": "^4.21.2",
     "framer-motion": "^10.16.4",
     "node-fetch": "^2.7.0",
@@ -35,9 +36,21 @@
   },
   "build": {
     "appId": "com.setscript.desktop",
+    "productName": "SetScript",
     "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
+      "icon": "/assets/icon.png"
+    },
+    "mac": {
+      "category": "public.app-category.social-networking"
+    },
+    "dmg": {
+      "icon": "/assets/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Network"
     }
   }
 }
